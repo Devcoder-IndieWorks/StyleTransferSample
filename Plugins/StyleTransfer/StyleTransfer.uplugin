@@ -1,0 +1,34 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "0.1",
+	"FriendlyName": "StyleTransfer",
+	"Description": "Style Transfer for UE5",
+	"Category": "ViveStudios",
+	"CreatedBy": "ViveStudios",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": true,
+	"Installed": false,
+	"Modules": [
+	    {
+		    "Name": "StyleTransfer",
+			"Type": "Runtime",
+			"LoadingPhase": "PostEngineInit"
+		}
+	],
+	"Plugins": [
+	    {
+		    "Name": "NeuralNetworkInference",
+			"Enabled": true
+		},
+		{
+		    "Name": "OpenCV",
+			"Enabled": true
+		}
+	]
+}
