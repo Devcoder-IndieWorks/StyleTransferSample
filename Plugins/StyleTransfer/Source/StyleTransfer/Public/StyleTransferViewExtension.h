@@ -7,7 +7,7 @@ class STYLETRANSFER_API FStyleTransferViewExtension : public FSceneViewExtension
 public:
     FStyleTransferViewExtension( const FAutoRegister& InAutoRegister );
 
-    static void SetupStyleTransfer( class UNeuralNetwork* InNNetwork );
+    static void SetupStyleTransfer( class UNeuralNetwork* InNNetwork, uint8 InPassId, bool InShowLog );
     static void ReleaseStyleTransfer();
 
 public:
@@ -19,9 +19,10 @@ public:
     virtual void PreRenderView_RenderThread( FRHICommandListImmediate& InRHICmdList, FSceneView& InView ) override {}
     virtual bool IsActiveThisFrame_Internal( const FSceneViewExtensionContext& InContext ) const override;
     virtual void SubscribeToPostProcessingPass( EPostProcessingPass InPassId, FAfterPassCallbackDelegateArray& InOutPassCallbacks, bool InIsPassEnabled ) override;
+    virtual int32 GetPriority() const override;
     // End ISceneViewExtension interface
 
-    FScreenPassTexture AfterTonemap_RenderThread( FRDGBuilder& InGraphBuilder, const FSceneView& InView, const FPostProcessMaterialInputs& InOutInputs );
+    FScreenPassTexture AddAfterPass_RenderThread( FRDGBuilder& InGraphBuilder, const FSceneView& InView, const FPostProcessMaterialInputs& InOutInputs );
 
 private:
     void AddStyleTransferPass_RenderThread( FRDGBuilder& InGraphBuilder, FRDGTextureRef InSourceTexture );

@@ -10,7 +10,7 @@ class UStyleTransferNNI : public UObject
     GENERATED_BODY()
 public:
     void SetNeuralNetwork( UNeuralNetwork* InNNetwork );
-    void RunModel( const TArray<float>& InImage, TArray<uint8>& OutResults );
+    void RunModel( const TArray<float>& InImage, TArray<uint8>& OutResults, bool InShowLog );
 
 private:
     UPROPERTY( Transient )

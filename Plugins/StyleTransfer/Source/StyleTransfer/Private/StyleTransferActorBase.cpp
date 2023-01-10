@@ -16,7 +16,7 @@ void AStyleTransferActorBase::BeginPlay()
         GEngine->Exec( GetWorld(), TEXT( "r.StyleTransferRealtime.Enable 1" ) );
 
         if ( ensure( NeuralNetwork != nullptr ) )
-            UStyleTransferBlueprintLibrary::SetNeuralNetwork( NeuralNetwork );
+            UStyleTransferBlueprintLibrary::SetNeuralNetwork( NeuralNetwork, (uint8)Pass, ShowLog );
     }
 }
 

@@ -10,7 +10,7 @@ class STYLETRANSFER_API UStyleTransferBlueprintLibrary : public UBlueprintFuncti
     GENERATED_UCLASS_BODY()
 public:
     UFUNCTION( BlueprintCallable, Category="StyleTransfer" )
-    static void SetNeuralNetwork( class UNeuralNetwork* InNNetwork );
+    static void SetNeuralNetwork( class UNeuralNetwork* InNNetwork, uint8 InPassId, bool InShowLog );
     UFUNCTION( BlueprintCallable, Category="StyleTransfer" )
     static void ResetNeuralNetwork();
 };

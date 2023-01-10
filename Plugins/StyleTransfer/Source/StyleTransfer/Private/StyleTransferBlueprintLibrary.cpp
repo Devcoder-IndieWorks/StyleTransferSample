@@ -7,9 +7,9 @@ UStyleTransferBlueprintLibrary::UStyleTransferBlueprintLibrary( const FObjectIni
 {
 }
 
-void UStyleTransferBlueprintLibrary::SetNeuralNetwork( UNeuralNetwork* InNNetwork )
+void UStyleTransferBlueprintLibrary::SetNeuralNetwork( UNeuralNetwork* InNNetwork, uint8 InPassId, bool InShowLog )
 {
-    FStyleTransferViewExtension::SetupStyleTransfer( InNNetwork );
+    FStyleTransferViewExtension::SetupStyleTransfer( InNNetwork, InPassId, InShowLog );
 }
 
 void UStyleTransferBlueprintLibrary::ResetNeuralNetwork()
